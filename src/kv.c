@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <kv_t.h>
+#include <kv.h>
 
 kv_t *kv_init(size_t capacity) {
     kv_t *db = malloc(sizeof(kv_t));
