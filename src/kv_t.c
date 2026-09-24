@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <kv_t.h>
 
 kv_t *kv_init(size_t capacity) {
