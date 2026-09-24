@@ -3,9 +3,11 @@
 #include <kv.h>
 
 kv_t *kv_init(size_t capacity) {
-    kv_t *db = malloc(sizeof(kv_t));
+    if (capacity == 0) return NULL;
 
-    if (db == NULL) {
+    kv_t *table = malloc(sizeof(kv_t));
+
+    if (table == NULL) {
         perror("malloc");
         return NULL;
     }
@@ -14,12 +16,12 @@ kv_t *kv_init(size_t capacity) {
 
     if (entries == NULL) {
         perror("calloc");
-        free(db);
+        free(table);
         return NULL;
     }
 
-    db->entries = entries;
-    db->capacity = capacity;
-    db->count = 0;
-    return db;
+    table->entries = entries;
+    table->capacity = capacity;
+    table->count = 0;
+    return table;
 }

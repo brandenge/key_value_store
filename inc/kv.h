@@ -1,14 +1,14 @@
 #ifndef KV_H
 #define KV_H
 
-#include <stddef.h>
+#include <stdlib.h>
 
-typedef struct kv_entry_t {
+typedef struct {
     char *key;
     char *value;
 } kv_entry_t;
 
-typedef struct kv_t {
+typedef struct {
     kv_entry_t *entries;
     size_t capacity;
     size_t count;
